@@ -38,3 +38,17 @@ Additional Notes:
 
 ## Usage
 To launch and run the tests, double click on the index.html file.
+
+## Resource Leveraged
+First, thanks to my study group for some coaching on tests 3 & 4.  I was stuck for days, just missing a simple thing. 
+
+I also picked up some hints from the project_4 slack channel, particularly helping me past a Gulp-induced problem. 
+
+I also leveraged the DOM lectures from this course for some refresher material.  
+
+
+
+
+
+
+
