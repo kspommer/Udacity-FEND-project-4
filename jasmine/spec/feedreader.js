@@ -134,24 +134,21 @@ $(function() {
     describe("New Feed Selection", function() {
         var initialFeed, 
             nextFeed; 
-
         // complete these functions before run test 
         beforeEach(function(done) {
             // get 1st feed
             loadFeed(0, function () {
-                initialFeed = document.querySelector(".feed");
-                //console.log(initialFeed); // TEST
-                done();
-            });    
-            // get 2nd feed
-            loadFeed(1, function () {
-                // after loadFeed is done, get first entry again
-                var nextFeed = document.querySelector(".feed");
-                //console.log(nextFeed); // TEST
-                done(); 
-            });
-        }); 
-
+                initialFeed = document.querySelector(".feed").innerHTML;
+                console.log(initialFeed); // FOR TESTING 
+                // get 2nd feed
+                loadFeed(1, function () {
+                    // after loadFeed is done, get first entry again
+                    var nextFeed = document.querySelector(".feed").innerHTML;
+                    console.log(nextFeed); // FOR TESTING
+                    done(); 
+                });
+            }); 
+        });      
         // references for toBe and toEqual 
         // https://www.tutorialspoint.com/jasminejs/jasminejs_equality_check.htm
         // https://jasmine.github.io/tutorials/your_first_suite
@@ -161,18 +158,3 @@ $(function() {
         });
     });
 });
-
-// Questions on test 7 for reviewers: 
-// 1)  is it better to compare '.feed' or ('.feed').innerHTML? 
-// 2)  is it better to get feeds sequentially (per above) or nest
-// calls for feed within each other (such as the following)
-
-//  beforeEach((done) => {
-//      loadFeed(0, () => {
-//          initialFeed = document.querySelector('.feed');
-//          loadFeed(1, () => {
-//              nextFeed = document.querySelector('.feed');
-//              done();
-//          });
-//      });
-//  });
