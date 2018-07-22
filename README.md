@@ -26,8 +26,9 @@ Write a new test suite named `"The menu"`.
 
 Write a test suite named `"Initial Entries"`.
 **Test 5:** Write a test that ensures when the `loadFeed` function is called and completes its work, there is at least a single `.entry` element within the `.feed` container.
-**Test 6:**  Write a test suite named `"New Feed Selection"`.
-**Test 7:**  Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
+
+Write a test suite named `"New Feed Selection"`.
+**Test 6:**  Write a test that ensures when a new feed is loaded by the `loadFeed` function that the content actually changes.
 
 Additional Notes:
 * No test should be dependent on the results of another.
@@ -40,15 +41,15 @@ Additional Notes:
 To launch and run the tests, double click on the index.html file.
 
 ## Resource Leveraged
-First, thanks to my study group for some coaching on tests 3 & 4.  I was stuck for days, just missing a simple thing. 
+First, thanks to my study group for some coaching on tests 3 & 4.  
+I was stuck for days, just missing a simple ("duh!") thing. 
 
-I also picked up some hints from the project_4 slack channel, particularly helping me past a Gulp-induced problem. 
+Leveraged DOM lectures from this course for some refresher material.  
 
-I also leveraged the DOM lectures from this course for some refresher material.  
+External references: 
+References for toBe and toEqual 
+https://www.tutorialspoint.com/jasminejs/jasminejs_equality_check.htm
+https://jasmine.github.io/tutorials/your_first_suite
 
-
-
-
-
-
-
+Reference for click() method
+https://www.w3schools.com/jsref/met_html_click.asp
