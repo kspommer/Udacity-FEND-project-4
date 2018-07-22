@@ -104,10 +104,9 @@ $(function() {
 
     /* ADDED: new test suite named "Initial Entries" */
 
-        /* ADDED test 5: ensures when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
-         * Note:  loadFeed() is asynchronous test utilizies
+        /* ADDED test 5: ensures when loadFeed function is called
+         * at least one .entry element within the .feed container.
+         * Note:  loadFeed() is asynchronous test; test utilizies
          * Jasmine's beforeEach and asynchronous done() function.
          */
     describe("Initial Entries", function() {
@@ -118,11 +117,13 @@ $(function() {
             });
         });
 
-        // check to see if items are added to the feed (have class entry-link)
+        // check to see if entries are added to the feed
         it("has at least one feed URL", function() {
-            //console.log(document.querySelector(".entry-link")); // TEST
-            expect(document.querySelector(".entry-link")).not.toBe(null); 
-            // NOTE:  could also query on classes .feed .entry
+            // capture all itemss with feed and entry class
+            var feedItems = document.querySelectorAll(".feed .entry"); 
+            // console.log(feedItems.length); // FOR TESTING 
+            // check to see if feed has 1 or more entry 
+            expect(feedItems.length).toBeGreaterThan(0); 
         });
     });
 
@@ -139,12 +140,13 @@ $(function() {
             // get 1st feed
             loadFeed(0, function () {
                 initialFeed = document.querySelector(".feed").innerHTML;
-                console.log(initialFeed); // FOR TESTING 
-                // get 2nd feed
+                // console.log(initialFeed); // FOR TESTING 
+                // after first feed, get 2nd feed before declaring done
+                // and running test to ensure 2nd loadFeed is executed
                 loadFeed(1, function () {
                     // after loadFeed is done, get first entry again
                     var nextFeed = document.querySelector(".feed").innerHTML;
-                    console.log(nextFeed); // FOR TESTING
+                    //console.log(nextFeed); // FOR TESTING
                     done(); 
                 });
             }); 
